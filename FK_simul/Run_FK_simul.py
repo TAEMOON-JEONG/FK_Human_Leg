@@ -12,7 +12,9 @@ def update(val):
     Result = ForwardKinematics(update_model)
 
     ax.cla()
-
+    ax.set_xlim(left=-5, right=5)
+    ax.set_ylim(bottom=-5, top=5)
+    ax.set_zlim(bottom=-5, top=5)
     drawVector(ax, Result, pointEnable=True, lineWidth=2)
     
 ##valuable initialize
