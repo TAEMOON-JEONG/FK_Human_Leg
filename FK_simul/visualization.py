@@ -62,17 +62,3 @@ def drawVector(fig, result, **kwargs):
 
             if annotationString != '':
                 fig.text(xs[1], ys[1], zs[1], annotationString, size=15, zorder=1, color='k')
-
-
-def update(val):
-    theta = [s1Angle.val, s2Angle.val, s3Angle.val, s4Angle.val, s5Angle.val, s6Angle.val, s7Angle.val,
-             s8Angle.val, s9Angle.val, s10Angle.val, s11Angle.val, s12Angle.val, s13Angle.val]
-
-    Link = [1, 1, 0, 0, 2, 2, 0, 1, 0, 0, 2, 2, 0]
-
-    update_model = skeleton_HT(theta, Link)
-    Result = ForwardKinematics(update_model)
-
-    ax.cla()
-
-    drawVector(ax, Result, pointEnable=True, lineWidth=2)
